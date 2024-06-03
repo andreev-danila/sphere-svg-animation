@@ -47,15 +47,13 @@ export function SpherePath({ d, index, pathCount }: SpherePathProps) {
       '#3754ED',
     ]);
 
-    const outputRange = [0, -10];
-    const translateX = interpolate(transition.value, inputRange, outputRange);
-    const translateY = interpolate(transition.value, inputRange, outputRange);
+    const translate = interpolate(transition.value, inputRange, [0, -10]);
 
     return {
       stroke,
-      transform: [{ translateX }, { translateY }],
+      transform: [{ translateX: translate }, { translateY: translate }],
     };
   });
 
-  return <AnimatedPath d={d} animatedProps={animatedProps} />;
+  return <AnimatedPath animatedProps={animatedProps} />;
 }
