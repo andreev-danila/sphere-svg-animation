@@ -55,5 +55,5 @@ export function SpherePath({ d, index, pathCount }: SpherePathProps) {
     };
   });
 
-  return <AnimatedPath animatedProps={animatedProps} />;
+  return <AnimatedPath d={d} animatedProps={animatedProps} />;
 }
